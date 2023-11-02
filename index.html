@@ -55,10 +55,12 @@
 			/* Header */
 			.header {
 			position: absolute;
-			top: 0;
-			left: 0;
+			top: 10;
+			left: 10;
 			width: 100%;
 			text-align: left; /* Adjust alignment as needed */
+			margin-left: 50px; 
+			margin-top: 50px; 
 
 			}
 			.header .header-content {
@@ -78,6 +80,8 @@
 				width: 100%;
 				text-align: left; /* Adjust alignment as needed */
 				font-style: italic; /* Make the text italic */
+				margin-left: 50px; 
+				margin-bottom: 25px; 
 			}
 
 			.footer .footer-content {
@@ -94,7 +98,12 @@
 			.footer p {
 				font-size: 14px; /* Adjust the font size for the text */
 				margin-left: 10px; /* Add margin to separate text from the image */
+			}		
+			section > section > img {
+				height: 500px;
 			}
+		}	
+			
 		</style>
 
 		<div class="reveal">
@@ -106,30 +115,55 @@
 					  <p class="authors">Nodjoumi G., Suaréz Valencia J., Rossi A. P., and the EXPLORE consortium</p>
 					  <p class="affiliations">Constructor University Bremen, Germany</p>
 					</div>
-				  </section>
+				  </section>				
+							
 				<section>
-					<textarea data-template>
-						## Slide 1
-						A paragraph with some text and a [link](https://hakim.se).
-						---
-						## Slide 2
-						---
-						## Slide 3
-					  </textarea>
+					<iframe width="1280" height="720" data-src="https://www.youtube.com/embed/oFkhiTTSh_Y?vq=hd1080&modestbranding=1&autoplay=1&rel=0&mute=1" frameborder="0" data-autoplay> </iframe>
 				</section>
-				<!-- Header and Footer -->
-				<div class="header">
-					<div class="footer-content">
-						<img src="./content/logo/CU_Logotype_RGB_white_blue_red.png" alt="Constructor University">
-						<img src="./content/logo/Explore_Logo_Standard.png" alt="EXPLORE Project">
-					</div>
+
+				<section data-markdown>
+					<textarea data-template>
+					  ## Progetto EXPLORE					  
+					  ---
+					  ---
+					  ## Slide 3
+					</textarea>
+				  </section>
+				  <!-- L-EXPLO-->
+				  <section>
+					<section> 
+						<img data-src="./content/logo/SDAGraphics_WEB_L-EXPLO_mag.svg">						
+					</section>
+					<section>Vertical Slide 2</section>
+				  </section>
+				  <!-- L-HEX-->
+				  <section>
+					<section> 
+						<img data-src="./content/logo/SDAGraphics_WEB_L-HEX_mag.svg">						
+					</section>
+					<section>Vertical Slide 2</section>
+				  </section>
+				  <section>
+					<section> 
+						<h1></h1>
+						<img data-src="./content/images/exploreqr.svg">						
+					</section>
+					
+				  </section>
+				  	
+			</div>
+			<!-- Header and Footer -->
+			<div class="header">
+				<div class="footer-content">
+					<img src="./content/logo/CU_Logotype_RGB_white_blue_red.png" alt="Constructor University">
+					<img src="./content/logo/Explore_Logo_Standard.png" alt="EXPLORE Project">
 				</div>
-				<div class="footer">
-					<div class="footer-content">
-						<img src="./content/logo/logoEU.jpg" alt="EU Logo">
-						<p>This project has received funding from the European Union'S Horizon research and innovation programme under gran agreement No 101004214.
-						   This project has received funding from the European Union'S Horizon research and innovation programme under gran agreement No 871149.</p>
-					</div>
+			</div>
+			<div class="footer">
+				<div class="footer-content">
+					<img src="./content/logo/logoEU.jpg" alt="EU Logo">
+					<p>This project has received funding from the European Union'S Horizon research and innovation programme under gran agreement No 101004214.
+					   This project has received funding from the European Union'S Horizon research and innovation programme under gran agreement No 871149.</p>
 				</div>
 			</div>
 		</div>
@@ -152,10 +186,42 @@
 				controlsTutorial: true,        // turn off arrow bumping
 				controlsLayout: 'edges',        // default 'bottom-right'
 				controlsBackArrows: 'visible',
-
+				autoPlayMedia: true,
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				
+				
 			});
 		</script>
+		<script>
+			var videoSlide = document.getElementById('video-slide');
+			var iframe = videoSlide.querySelector('iframe');
+			var player;
+			
+			Reveal.addEventListener('slidechanged', function(event) {
+			  if (event.indexh === videoSlide.dataset.indexh) {
+				if (!player) {
+				  player = new YT.Player(iframe, {
+					events: {
+					  'onStateChange': onPlayerStateChange
+					}
+				  });
+				} else {
+				  player.playVideo();
+				}
+			  } else {
+				if (player) {
+				  player.pauseVideo();
+				}
+			  }
+			});
+			
+			function onPlayerStateChange(event) {
+			  if (event.data === YT.PlayerState.ENDED) {
+				player.seekTo(0); // Reset the video when it ends
+			  }
+			}
+			</script>
+		
 	</body>
 </html>
