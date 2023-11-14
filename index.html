@@ -52,6 +52,11 @@
 			.title-authors p.affiliations {
 			font-size: 25px; /* Adjust the font size as needed */
 			}	
+			.title-authors p.notes {
+			font-size: 20px; /* Adjust the font size as needed */
+			font-style: italic;
+			}	
+
 			/* Header */
 			.header {
 			position: absolute;
@@ -117,33 +122,97 @@
 					</div>
 				  </section>				
 							
+				<!-- EXPLORE -->
 				<section>
-					<iframe width="1280" height="720" data-src="https://www.youtube.com/embed/oFkhiTTSh_Y?vq=hd1080&modestbranding=1&autoplay=1&rel=0&mute=1" frameborder="0" data-autoplay> </iframe>
+				<section> 
+					<img data-src="./content/logo/Explore_Logo_Standard.png">								
+				</section>													
+				<section>
+					<img data-src="./content/images/members.png">						
 				</section>
-
-				<section data-markdown>
-					<textarea data-template>
-					  ## Progetto EXPLORE					  
-					  ---
-					  ---
-					  ## Slide 3
-					</textarea>
-				  </section>
+				<section> 
+					<img data-src="./content/images/Explore_science.svg">						
+				</section>
+				
+				</section>
 				  <!-- L-EXPLO-->
 				  <section>
 					<section> 
-						<img data-src="./content/logo/SDAGraphics_WEB_L-EXPLO_mag.svg">						
+						<img data-src="./content/logo/SDAGraphics_WEB_L-EXPLO_mag.svg">			
+						<img data-src="./content/logo/SDAGraphics_WEB_L-HEX_mag.svg">					
 					</section>
-					<section>Vertical Slide 2</section>
-				  </section>
-				  <!-- L-HEX-->
-				  <section>
-					<section> 
-						<img data-src="./content/logo/SDAGraphics_WEB_L-HEX_mag.svg">						
+					<section data-markdown>
+						<section>
+						<textarea data-template>
+						  ## Obiettivi				  
+						  ---						  
+						  **Fornire accesso a:**
+						  * dati processati ad alto livello
+						  * funzionalità base ed avanzate per il processamento di diverse tipologie di dati	
+						  * visualizzazione 3D di DEM e DOM
+						  * ambiente GIS-like
+						  * servizi WMS/WMTS/WCS per l'integrazione in workflows personalizzati e/o servizi esterni						  
+						</textarea>
+						</section>						
 					</section>
-					<section>Vertical Slide 2</section>
-				  </section>
-				  <section>
+					<section data-markdown>
+						<section>
+						<textarea data-template>
+						  ### Architettura
+						  ---				  
+						  <img data-src="./content/images/architecture.svg">
+						</textarea>
+						</section>						
+					</section>					  
+					<section data-markdown>
+						<section>
+						<textarea data-template>
+						  ### Dati				  
+						  ---					  
+						  **Level 2 - Calibrati e Georeferenziati**
+						  * Lunar Recoinnasance Orbiter Narrow e Wide Cameras (NAC, WAC)
+						  * Chandrayaan-1 Moon Mineralogical Mapper (M3)
+						  * Clementine
+
+						  **Prodotti**
+						  * NAC Digital Elevation Models (DEM)
+						  * M3 Indici Spettrali (Generati con i tool Open-Source sviluppati nel progetto EXPLORE)
+						  * USGS Abundance Maps
+						  * Carte e mappe create nel progetto GMAP (in implementazione)
+						</textarea>
+						</section>						
+					</section>
+					<section data-markdown>
+						<section>
+						<textarea data-template>
+						  ### Funzionalità avanzate			  
+						  ---					  
+						  **Analisi Spettrali**
+						  * Estrazione firme spettrali (comparazione con database in implementazione)
+						  * Creazione di cubi spettrali contenenti 28 indici 
+						  * Creazione immagini RGB da cubi spettrali
+
+						  **Mappatura assistita di morfologie**
+						  * Identificazione e mappatura crateri tramite Deep Learning
+						  
+						  **Visualizzazione Modelli 3D**
+						  * DEM
+						  * DOM
+
+						<div class="title-authors">						
+						<p class="notes">Ogni funzionalità è disponibile anche in Jupyter Notebook dedicati</p>
+						</div>
+						
+						  
+						</textarea>
+						</section>						
+					</section>
+				</section>
+				<!-- DEMO-->				  
+				<section>
+					<iframe width="1280" height="720" data-src="https://www.youtube.com/embed/oFkhiTTSh_Y?vq=hd1080&modestbranding=1&autoplay=1&rel=0&mute=1" frameborder="0" data-autoplay> </iframe>
+				</section>
+				<section>
 					<section> 
 						<h1></h1>
 						<img data-src="./content/images/exploreqr.svg">						
