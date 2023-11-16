@@ -60,12 +60,12 @@
 			/* Header */
 			.header {
 			position: absolute;
-			top: 10;
-			left: 10;
+			top: 0px;
+			left: 0px;
 			width: 100%;
 			text-align: left; /* Adjust alignment as needed */
-			margin-left: 50px; 
-			margin-top: 50px; 
+			margin-left: 10px; 
+			margin-top: -10px; 
 
 			}
 			.header .header-content {
@@ -74,19 +74,19 @@
 				padding: 5px; /* Adjust padding as needed */
 			}
 			.header img {
-			height: 50px; /* Adjust the image height */
+			height: 30px; /* Adjust the image height */
 			/* You can add more styles as needed */
 			}
 
 			.footer {
-				position: absolute;
+				position: fixed;
 				bottom: 0;
 				left: 0;
 				width: 100%;
 				text-align: left; /* Adjust alignment as needed */
 				font-style: italic; /* Make the text italic */
-				margin-left: 50px; 
-				margin-bottom: 25px; 
+				margin-left: 10px; 
+				margin-bottom: -10px; 
 			}
 
 			.footer .footer-content {
@@ -96,50 +96,130 @@
 			}
 
 			.footer img {
-				height: 50px; /* Adjust the image height */
+				height: 10px; /* Adjust the image height */
 				/* You can add more styles as needed */
 			}
 
 			.footer p {
-				font-size: 14px; /* Adjust the font size for the text */
+				font-size: 12px; /* Adjust the font size for the text */
 				margin-left: 10px; /* Add margin to separate text from the image */
 			}		
 			section > section > img {
 				height: 500px;
 			}
+			.ken-burns-effect {
+			background-image: url('./Images/Eclipse_Rome.png');
+			background-size: cover;
+			background-position: 0% 50%;
+			animation: kenBurns 120s linear infinite alternate;
+			}
+
+			@keyframes kenBurns {
+			0% {
+				background-position: 0% 50%;
+			}
+			100% {
+				background-position: 100% 50%;
+			}
+			}
+			 /* Custom styles for the video slide */
+			
+			#video-container {
+			padding: 56.25% 0 0 0;
+			position: relative;
+			}
+
+			#vimeo-video {
+			position: absolute;
+			top: 75px;
+			left: 25px;
+			
+			width: 100%;
+			height: 70%;
+			}
 		}	
+		.ken-burns-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .ken-burns-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: kenBurnsAnimation 20s infinite alternate; /* Adjust animation duration as needed */
+        }
+
+        .fixed-image {
+            position: absolute;
+			/*display: flex; /* Use flexbox to position elements side by side */
+			align-items: center;
+			
+            top: 20%;
+            left: 25%;
+            
+            z-index: 2; /* Adjust the z-index as needed to ensure the fixed image appears above the background */
+        }
+
+        
+
+    }
 			
 		</style>
 
 		<div class="reveal">
 			<div class="slides">
+				<!-- Header and Footer -->
+				<div class="header">
+					<div class="footer-content">
+						<img src="./content/logo/CU_Logotype_RGB_white_blue_red.png" alt="Constructor University">
+						<img src="./content/logo/Explore_Logo_Standard.png" alt="EXPLORE Project">
+					</div>				
+				</div>
+				<div class="footer">
+					<div class="footer-content">
+						<img src="./content/logo/logoEU.jpg" alt="EU Logo">
+						<p>This project has received funding from the European Union'S Horizon research and innovation programme under gran agreement No 101004214.
+						   This project has received funding from the European Union'S Horizon research and innovation programme under gran agreement No 871149.</p>
+					</div>
+				</div>
 				<section>
 					<div class="title-authors">
 					  <h1 class="r-fit-text">EXPLORE L-EXPLO & L-HEX</h1>
 					  <p class="subtitle">Applicazioni scientifiche Open-Source per la cartografia lunare</p>
-					  <p class="authors">Nodjoumi G., Suaréz Valencia J., Rossi A. P., and the EXPLORE consortium</p>
-					  <p class="affiliations">Constructor University Bremen, Germany</p>
+					  <p class="authors">Nodjoumi G., Suaréz Valencia J., Rossi A. P.</p>
+					  <p class="affiliations">Constructor University Bremen, Brema, Germania</p>
 					</div>
+					
+			
 				  </section>				
 							
 				<!-- EXPLORE -->
 				<section>
 				<section> 
-					<img data-src="./content/logo/Explore_Logo_Standard.png">								
+					<img data-src="./content/logo/Explore_Logo_Standard.png" style="height: 10%">								
 				</section>													
 				<section>
-					<img data-src="./content/images/members.png">						
+					<img data-src="./content/images/members.png" style="height: 400px;">
 				</section>
-				<section> 
-					<img data-src="./content/images/Explore_science.svg">						
+				<section>
+					<img data-src="./content/images/Explore_science.svg" style="height: 600px !important;">
 				</section>
+				
 				
 				</section>
 				  <!-- L-EXPLO-->
 				  <section>
-					<section> 
-						<img data-src="./content/logo/SDAGraphics_WEB_L-EXPLO_mag.svg">			
-						<img data-src="./content/logo/SDAGraphics_WEB_L-HEX_mag.svg">					
+					<section>
+						<img data-src="./content/logo/SDAGraphics_WEB_L-EXPLO_mag.svg" style="height: 400px !important;">
+						<img data-src="./content/logo/SDAGraphics_WEB_L-HEX_mag.svg" style="height: 400px !important;">
 					</section>
 					<section data-markdown>
 						<section>
@@ -147,11 +227,12 @@
 						  ## Obiettivi				  
 						  ---						  
 						  **Fornire accesso a:**
-						  * dati processati ad alto livello
-						  * funzionalità base ed avanzate per il processamento di diverse tipologie di dati	
-						  * visualizzazione 3D di DEM e DOM
-						  * ambiente GIS-like
-						  * servizi WMS/WMTS/WCS per l'integrazione in workflows personalizzati e/o servizi esterni						  
+						  * Dati processati ad alto livello
+						  * Funzionalità per il processamento di dati iperspettrali
+						  * Funzionalità per la mappatura di morfologia tramite modelli Deep Learning pre-alleanti e/o allenabili
+						  * Visualizzazione 3D di DEM e DOM e modelli 3D.
+						  * Servizi WMS/WMTS/WCS per l'integrazione in workflows personalizzati e/o servizi esterni						  
+						  
 						</textarea>
 						</section>						
 					</section>
@@ -167,40 +248,50 @@
 					<section data-markdown>
 						<section>
 						<textarea data-template>
-						  ### Dati				  
+						  ### Dati Principali			  
 						  ---					  
 						  **Level 2 - Calibrati e Georeferenziati**
 						  * Lunar Recoinnasance Orbiter Narrow e Wide Cameras (NAC, WAC)
 						  * Chandrayaan-1 Moon Mineralogical Mapper (M3)
-						  * Clementine
-
-						  **Prodotti**
-						  * NAC Digital Elevation Models (DEM)
-						  * M3 Indici Spettrali (Generati con i tool Open-Source sviluppati nel progetto EXPLORE)
 						  * USGS Abundance Maps
-						  * Carte e mappe create nel progetto GMAP (in implementazione)
+						  * Compatibilità con altri dataset (GRAIL, Clementine, etc.)
+
 						</textarea>
 						</section>						
 					</section>
 					<section data-markdown>
 						<section>
 						<textarea data-template>
+						  ### Prodotti
+						  ---					  
+						  						  
+						  * M3 Indici Spettrali (Generati con i tool Open-Source sviluppati nel progetto EXPLORE)
+						  * Modelli Deep Learning per la segmentazione di morfologie specifiche
+						  * NAC Digital Elevation Models (DEM)
+						  * Carte e mappe create nel progetto GMAP (in implementazione)
+						  
+
+						</textarea>
+						</section>						
+					</section>
+
+
+					<section data-markdown>
+						
+						<section>
+						<textarea data-template>
 						  ### Funzionalità avanzate			  
 						  ---					  
 						  **Analisi Spettrali**
-						  * Estrazione firme spettrali (comparazione con database in implementazione)
+						  * Estrazione di firme spettrali (comparazione con database in implementazione)
 						  * Creazione di cubi spettrali contenenti 28 indici 
 						  * Creazione immagini RGB da cubi spettrali
 
 						  **Mappatura assistita di morfologie**
 						  * Identificazione e mappatura crateri tramite Deep Learning
 						  
-						  **Visualizzazione Modelli 3D**
-						  * DEM
-						  * DOM
-
 						<div class="title-authors">						
-						<p class="notes">Ogni funzionalità è disponibile anche in Jupyter Notebook dedicati</p>
+						<p class="notes">Ogni funzionalità è disponibile anche in Jupyter Notebooks dedicati</p>
 						</div>
 						
 						  
@@ -208,89 +299,69 @@
 						</section>						
 					</section>
 				</section>
-				<!-- DEMO-->				  
-				<section>
-					<iframe width="1280" height="720" data-src="https://www.youtube.com/embed/oFkhiTTSh_Y?vq=hd1080&modestbranding=1&autoplay=1&rel=0&mute=1" frameborder="0" data-autoplay> </iframe>
+				<!-- DEMO-->				  				
+				<section data-background-iframe=https://player.vimeo.com/video/884932742?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479">  
 				</section>
-				<section>
-					<section> 
-						<h1></h1>
-						<img data-src="./content/images/exploreqr.svg">						
-					</section>
+
+				
+				<!-- DEMO-->				  				
+				<section data-markdown>						
+					<section>
+					<textarea data-template>
+					  ### Conclusioni
+					  ---
+					  * Piattaforma completamente Open-Source
+					  * Modulare ed espandibile
+					  * Scalabile  		
+					  * Accesso a funzionalità precedentemente non disponibili
+					  * Nessun requisito d'installazione per gli utenti
+					  	
+
+					  ---
+					  Rilascio previsto entro fine progetto EXPLORE (31/12/2023)
+					  
+					</textarea>
 					
-				  </section>
+					</section>
+				</section>
+				<section class="ken-burns-effect"> 
+					<div class="fixed-image">
+						<img src="./content/images/exploreqr.svg" style="height: 300px;">	
+						<h3>Grazie per l'attenzione </h3>	
+										
+					</div>				
+				</section>
+					
+				
 				  	
 			</div>
-			<!-- Header and Footer -->
-			<div class="header">
-				<div class="footer-content">
-					<img src="./content/logo/CU_Logotype_RGB_white_blue_red.png" alt="Constructor University">
-					<img src="./content/logo/Explore_Logo_Standard.png" alt="EXPLORE Project">
-				</div>
-			</div>
-			<div class="footer">
-				<div class="footer-content">
-					<img src="./content/logo/logoEU.jpg" alt="EU Logo">
-					<p>This project has received funding from the European Union'S Horizon research and innovation programme under gran agreement No 101004214.
-					   This project has received funding from the European Union'S Horizon research and innovation programme under gran agreement No 871149.</p>
-				</div>
-			</div>
+			
+			
 		</div>
 
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="https://player.vimeo.com/api/player.js"></script>
+
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
-				hash: true,
-				width: 1600,
-				height: 800,
-				margin: 0.05,				
-				transition: 'convex',           // default 'slide'
-				transitionSpeed: 'slow',        // slow down slide transitions
-				controlsTutorial: true,        // turn off arrow bumping
-				controlsLayout: 'edges',        // default 'bottom-right'
-				controlsBackArrows: 'visible',
-				autoPlayMedia: true,
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-				
-				
+			  hash: true,
+			  width: 1280,
+			  height: 720,
+			  margin: 0.001,
+			  transition: 'convex',
+			  transitionSpeed: 'slow',
+			  controlsTutorial: true,
+			  controlsLayout: 'edges',
+			  controlsBackArrows: 'visible',
+			  autoPlayMedia: true,
+			  plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 			});
-		</script>
-		<script>
-			var videoSlide = document.getElementById('video-slide');
-			var iframe = videoSlide.querySelector('iframe');
-			var player;
-			
-			Reveal.addEventListener('slidechanged', function(event) {
-			  if (event.indexh === videoSlide.dataset.indexh) {
-				if (!player) {
-				  player = new YT.Player(iframe, {
-					events: {
-					  'onStateChange': onPlayerStateChange
-					}
-				  });
-				} else {
-				  player.playVideo();
-				}
-			  } else {
-				if (player) {
-				  player.pauseVideo();
-				}
-			  }
-			});
-			
-			function onPlayerStateChange(event) {
-			  if (event.data === YT.PlayerState.ENDED) {
-				player.seekTo(0); // Reset the video when it ends
-			  }
-			}
-			</script>
 		
-	</body>
-</html>
+			
+		  </script>		  		 
+		  
+		</body>
+		</html>
